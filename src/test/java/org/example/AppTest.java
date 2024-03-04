@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -19,10 +18,10 @@ public class AppTest
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\david\\Downloads\\geckodriver-v0.34.0-win32\\geckodriver.exe");
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Administrator\\Documents\\David\\chromedriver_win32\\chromedriver.exe");
+        // Create an instance of ChromeDriver
+        driver = new ChromeDriver();
     }
-
 
     @Test
     public void testRegister() throws InterruptedException {
