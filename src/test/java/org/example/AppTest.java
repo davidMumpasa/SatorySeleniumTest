@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -18,6 +19,10 @@ public class AppTest
 
     @BeforeMethod
     public void setUp() {
+
+        // Inside your @BeforeMethod or @BeforeClass setup method
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Administrator\\Documents\\David\\chromedriver_win32\\chromedriver.exe");
         // Create an instance of ChromeDriver
         driver = new ChromeDriver();
