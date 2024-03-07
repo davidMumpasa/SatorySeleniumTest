@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -19,10 +18,6 @@ public class AppTest
 
     @BeforeMethod
     public void setUp() {
-
-        // Inside your @BeforeMethod or @BeforeClass setup method
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Administrator\\Documents\\David\\chromedriver_win32\\chromedriver.exe");
         // Create an instance of ChromeDriver
         driver = new ChromeDriver();
@@ -96,7 +91,7 @@ public class AppTest
         Thread.sleep(2000);
 
         emailInput.clear();
-        emailInput.sendKeys("chrisva@gmail.com");
+        emailInput.sendKeys("Rajesh@fluidintellect.com");
         Thread.sleep(2000);
 
         passwordInput.clear();
@@ -115,7 +110,7 @@ public class AppTest
         // User Already Register Test
 
         emailInput.clear();
-        emailInput.sendKeys("john.doe@example.com");
+        emailInput.sendKeys("Rajesh@fluidintellect.com");
         Thread.sleep(2000);
 
         passwordInput.clear();
@@ -137,7 +132,7 @@ public class AppTest
         // Test weak password
 
         emailInput.clear();
-        emailInput.sendKeys("david@fluidintellect.com");
+        emailInput.sendKeys("tammy.singh@fluidintellect.com");
         Thread.sleep(2000);
 
         passwordInput.clear();
@@ -159,15 +154,15 @@ public class AppTest
         // test with correct information
 
         emailInput.clear();
-        emailInput.sendKeys("Cedrickkihilu73@gmail.com");
+        emailInput.sendKeys("tammy.singh@fluidintellect.com");
         Thread.sleep(2000);
 
         passwordInput.clear();
-        passwordInput.sendKeys("CedrickKihilula$16");
+        passwordInput.sendKeys("TammySight$16");
         Thread.sleep(2000);
 
         confirmPasswordInput.clear();
-        confirmPasswordInput.sendKeys("CedrickKihilula$16");
+        confirmPasswordInput.sendKeys("TammySight$16");
         Thread.sleep(2000);
 
         signUpBtn = driver.findElement(By.cssSelector("#root > div > div > div.col.mb-5.mt-3.m-4 > div > div.text-center.pt-1.mb-2.pb-1.row > button"));
@@ -221,12 +216,12 @@ public class AppTest
         // correct login
         emailInput = driver.findElement(By.cssSelector("#form1"));
         emailInput.clear();
-        emailInput.sendKeys("david@fluidintellect.com");
+        emailInput.sendKeys("tammy.singh@fluidintellect.com");
         Thread.sleep(2000);
 
         passwordInput = driver.findElement(By.cssSelector("#form2"));
         passwordInput.clear();
-        passwordInput.sendKeys("DavidEbula$16");
+        passwordInput.sendKeys("TammySight$16");
         Thread.sleep(2000);
 
         loginBtn = driver.findElement(By.cssSelector("#root > div > div > div.col.mb-5.mt-5.m-4 > div > div.text-center.pt-1.mb-5.pb-1.row > button"));
